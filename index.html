@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Zango Challenge By Mina Zebarjadan</title>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/controllers.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/foundation.css"/>
+    <script src="js/vendor/modernizr.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+
+</head>
+
+<body>
+
+<header>
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="#">Zango's Web developers Challenge</a></h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li class="active"><a href="#">User Information</a></li>
+                <li class="has-dropdown">
+                    <a href="#">Social Networks</a>
+                    <ul class="dropdown">
+                        <li><a href="#" target="_blank">LinkedIn</a></li>
+                        <li><a href="#" target="_blank">Twitter</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </section>
+    </nav>
+</header>
+
+<div class="row">
+    <div class="panel">
+        <h1>Zango's Web developers Challenge</h1>
+
+        <h2>Mina Zebarjadan</h2>
+
+        <div class="contact">
+            <a href="#" data-reveal-id="firstModal" class="medium success button">Contact Me</a>
+
+            <div id="firstModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle"
+                 aria-hidden="true" role="dialog">
+
+                <h2 id="contactTitle">My Contact Info</h2>
+
+                <p><i class="fa fa-envelope"></i> <span>Email:</span> Minazebarjadan@gmail.com</p>
+
+                <p><i class="fa fa-phone"></i><span> Phone:</span> 416-838-7009</p>
+                <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+            </div>
+        </div>
+    </div>
+
+    <section id="mainSection">
+        <div ng-controller="MyController">
+
+            <table>
+                <thead>
+                <tr>
+                    <th class="small-2 large-4 columns">ID</th>
+                    <th width="150">Name</th>
+                    <th class="show-for-medium-up" width="150">Username</th>
+                    <th class="show-for-medium-up" width="150">Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in users" on-finish-render="ngRepeatFinished">
+
+                    <td class="small-2 large-4 columns">{{item.id}}</td>
+                    <td><a href="#" class="name-style" data-reveal-id="idModal{{$index}}">{{item.name}}</a></td>
+                    <td class="show-for-medium-up">{{item.username}}</td>
+                    <td class="show-for-medium-up">{{item.email}}</td>
+
+                </tr>
+                </tbody>
+            </table>
+
+            <div id="idModal{{$index}}" class="reveal-modal" data-reveal aria-labelledby="modalTitle"
+                 aria-hidden="true" role="dialog" ng-repeat="item in users">
+
+                <h2 id="modalTitle"><i class="fa fa-hand-o-right"></i> <span>{{item.company.name}}</span></h2>
+
+                <p class="lead link"><i class="fa fa-link"></i><span> Website:</span> <a href="http://{{item.website}}" target="_blank">{{item.website}}</a></p>
+
+                <p class="lead"><i class="fa fa-phone-square"></i><span> Phone: </span>{{item.phone}}</p>
+
+                <p class="lead"><i class="fa fa-map-marker"></i><span> Address: </span>{{item.address.suite}}, {{item.address.street}},
+                    {{item.address.city}}, {{item.address.zipcode}}</p>
+                <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+
+            </div>
+        </div>
+
+    </section>
+
+</div>
+<!--End Row-->
+<!--<div id="map_canvas"></div>-->
+<!--<input type="hidden" id="mapname-hf">-->
+<!--<input type="hidden" id="street-hf">-->
+<!--<input type="hidden" id="long-hf">-->
+<!--<input type="hidden" id="lat-hf">-->
+
+
+<footer id="mainFooter">
+    <p>
+        &copy;2015-Mina Zebarjadan
+    </p>
+</footer>
+
+<script src="js/vendor/jquery.js"></script>
+<script src="js/foundation.min.js"></script>
+
+<script>
+    $(document).foundation();
+</script>
+
+</body>
+</html>
+
+
+

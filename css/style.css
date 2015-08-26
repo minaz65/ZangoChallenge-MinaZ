@@ -1,0 +1,64 @@
+
+.row{
+    background-color: #a6cecd;
+}
+
+.panel h1{
+    color: #007095;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.panel h2{
+   color: #199221;
+    font-weight: 200;
+}
+
+h2 span{
+    color:#199221;
+}
+
+.link a{
+    text-decoration: underline;
+}
+
+p span{
+    font-weight: bold;
+}
+
+.reveal-modal h2{
+    color:#199221 ;
+}
+
+#mainSection table{
+    margin: 5% 20%;
+}
+
+.lat, .long, .street{
+    display: none;
+}
+
+footer #mainFooter{
+    clear: both;
+    margin-bottom: 0;
+}
+#mainFooter p{
+    text-align: center;
+    margin-top: 2%;
+    color: #248b87;
+    text-decoration: underline;
+}
+
+#location{
+    margin: 1%;
+
+}
+
+
+
+#map_canvas {
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    margin-top: 5%;
+}
